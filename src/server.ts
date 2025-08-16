@@ -3,7 +3,7 @@ import { Server } from "http";
 import mongoose from "mongoose";
 import app from "./app";
 import { envVars } from "./app/config/env";
-// import { seedSuperAdmin } from "./app/utils/seedSuperAdmin";
+import { seedSuperAdmin } from "./app/utils/seedSuperAdmin";
 
 let server: Server;
 
@@ -24,7 +24,7 @@ const startServer = async () => {
 
 (async () => {
     await startServer()
-    // await seedSuperAdmin()
+    await seedSuperAdmin()
 })()
 
 process.on("SIGTERM", () => {
@@ -76,11 +76,6 @@ process.on("uncaughtException", (err) => {
     process.exit(1)
 })
 
-
-
-
-
-
 // Unhandler rejection error
 // Promise.reject(new Error("I forgot to catch this promise"))
 
@@ -93,32 +88,3 @@ process.on("uncaughtException", (err) => {
  * uncaught rejection error
  * signal termination sigterm
  */
-
-
-
-
-
-
-// import { Server } from 'http';
-// import mongoose from 'mongoose';
-// // import app from './app';
-// // 
-// let server: Server;
-
-// const PORT = 5000;
-
-// async function main() {
-//     try {
-//         await mongoose.connect("mongodb+srv://sazzadur:sakib9988@cluster0.uxaxmsb.mongodb.net/tour-mmanagement-backend?retryWrites=true&w=majority&appName=Cluster0");
-//         console.log("Connected to MongoDB Using Mongoose!!");
-//         server = app.listen(PORT, () => {
-//             console.log(`App is listening on port ${PORT}`);
-//         });
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
-// main()
-
-
