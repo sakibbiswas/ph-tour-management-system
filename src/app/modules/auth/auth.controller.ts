@@ -192,7 +192,7 @@ const googleCallbackController = catchAsync(async (req: Request, res: Response, 
     //     success: true,
     //     statusCode: httpStatus.OK,
     //     message: "Password Changed Successfully",
-    //     data: null,
+    //     data: null
     // })
 
     res.redirect(`${envVars.FRONTEND_URL}/${redirectTo}`)
